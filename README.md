@@ -2,6 +2,7 @@
 - A single page Web Application.
 - The page displays two color boxs.
 - When the user clicks on the first box, a coordinnate of the Quest will be set as the destination coordinates.
+- As user  touches  the first color to request a treasure  location.
 - When the user clicks on the scound box, distance is calculated between the current location of the user and choosen Quest coordinates.
 
 # Stack for the Application:
