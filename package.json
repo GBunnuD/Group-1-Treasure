@@ -1,7 +1,15 @@
 {
-  "dependencies": {
-    "eslint": "^7.21.0",
-    "mysql": "^2.18.1",
-    "node": "^14.15.0"
-  }
+    "name": "node",
+    "version": "1.0.0",
+    "description": "GDP-2",
+    "main": "index.js",
+    "dependencies": {
+        "eslint": "^7.21.0",
+        "mysql": "^2.18.1",
+        "node": "^14.15.0",
+        "nodemon": "^2.0.4"
+    },
+    "scripts": {
+        "start": "node index.js"
+    }
 }
