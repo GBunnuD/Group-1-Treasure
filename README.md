@@ -6,7 +6,8 @@
 
 # Stack for the Application:
 - HTML.
-- CSS
+- CSS.
+- Bootstrap
 - JavaScript.
 - Node with Express.
 - MySQL.
