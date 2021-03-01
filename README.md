@@ -10,6 +10,7 @@
 - CSS.
 - Bootstrap
 - JavaScript.
+- jQuery
 - Node with Express.
 - MySQL.
 
