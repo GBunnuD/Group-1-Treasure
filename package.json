@@ -4,9 +4,12 @@
     "description": "GDP-2",
     "main": "index.js",
     "dependencies": {
+        "body-parser": "^1.19.0",
         "consolidate": "^0.16.0",
+        "ejs": "^3.1.6",
         "eslint": "^7.21.0",
         "express": "^4.17.1",
+        "md5": "^2.3.0",
         "mysql": "^2.18.1",
         "node": "^14.15.0",
         "nodemon": "^2.0.4"
