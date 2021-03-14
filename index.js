@@ -16,6 +16,6 @@ app.engine('ejs', engines.ejs)
 const router = require('./routes/router')
 app.use('/', router)
 app.use(bodyParser.json({ type: "application/*+json" }));
-
+app.use(express.static(__dirname + '/public/'));
 
 app.listen(3000)
