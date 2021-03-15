@@ -24,18 +24,14 @@ const app = express();
 /**
  * Normalize a port into a number, string, or false.
  */
-const normalizePort = (val) => {
-  const port = parseInt(val, 10);
-  if (Number.isNaN(port)) {
-    // named pipe
-    return val;
-  }
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-  return false;
-};
+var http = require('http');
+const express = require('express')
+const path = require('path')
+const engines = require('consolidate')
+const app = express();
+const md5 = require('md5');
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000
 
 /**
  * Load environment variables from .env file,
