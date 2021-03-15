@@ -25,12 +25,12 @@ const app = express();
  * Normalize a port into a number, string, or false.
  */
 var http = require('http');
-const express = require('express')
-const path = require('path')
-const engines = require('consolidate')
-const app = express();
+// const express = require('express')
+// const path = require('path')
+// const engines = require('consolidate')
+// const app = express();
 const md5 = require('md5');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000
 
 /**
@@ -69,7 +69,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(expressLayouts);
+// app.use(expressLayouts);
 
 // load seed data
 require('./utils/seeder.js')(app);
@@ -79,7 +79,7 @@ const routing = require('./routes/router.js');
 
 app.set('view engine', 'ejs')
 app.engine('ejs', engines.ejs)
-app.set('views', path.join(__dirname, './views'))
+app.set('views', path.join(__dirname, './views/'))
 app.set('view engine', 'ejs')
 app.engine('ejs', engines.ejs)
 
