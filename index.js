@@ -50,7 +50,7 @@ if (vars.error) {
 /**
  * Get port from environment and store in Express.
  */
-const port = normalizePort(process.env.PORT);
+const port = process.env.PORT || 3000
 app.set('port', port);
 // LOG.info(`Server Launch at port: ${port}`);
 
@@ -82,11 +82,13 @@ require('./utils/seeder.js')(app);
 // Use Express middleware to configure routing
 const routing = require('./routes/router.js');
 
-app.use('/', routing);
+app.set('view engine', 'ejs')
+app.engine('ejs', engines.ejs)
+app.set('views', path.join(__dirname, './views'))
+app.set('view engine', 'ejs')
+app.engine('ejs', engines.ejs)
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.listen(port, hostname, () => {
-  console.log(
-    `App running at http://${hostname}:${port}/ in ${process.env.NODE_ENV}`,
-  );
-  console.log('Hit CTRL-C CTRL-C to stop\n');
+app.listen(port, (err) => {
+    console.log(`Example app listening at http:${hostname}:${port}`)
 });

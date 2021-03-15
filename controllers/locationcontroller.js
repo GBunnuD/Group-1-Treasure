@@ -12,6 +12,6 @@ const notfoundstring = 'Could not find developer with id=';
 // GET all JSON
 api.get('/findall', (req, res) => {
   res.setHeader('Content-Type', 'application/json');
-  const data = req.app.locals.developers.query;
+  const data = req.app.locals.locations.query;
   res.send(JSON.stringify(data));
 });

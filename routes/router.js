@@ -13,11 +13,12 @@ require('dotenv').config();
 constLocationController = require('../controllers/locationcontroller')
 
 
-router.get('/', (req, res) => {
+
+router.get('/', (req, res,next) => {
     res.render('../views/index', { title: 'index' })
 })
 
-router.get('/ldata', (req, res) => {
+router.get('/ldata', (req, res,next) => {
 
   res.sendFile('locationdata.html');
 });
@@ -25,8 +26,8 @@ router.get('/ldata', (req, res) => {
 
 
 // Route requests that start with '/dev' to a particular controller
-router.use('/developer', require('../controllers/locationcontroller'));
+// router.use('/', require('../controllers/locationcontroller'));
 
 
 
-module.exports = router;
+module.exports = router
