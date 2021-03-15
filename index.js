@@ -46,8 +46,12 @@ if (vars.error) {
 /**
  * Get port from environment and store in Express.
  */
-const port = process.env.PORT || 3000
-app.set('port', port);
+app.set('view engine', 'ejs')
+app.engine('ejs', engines.ejs)
+app.set('views', path.join(__dirname, './views'))
+app.set('view engine', 'ejs')
+app.engine('ejs', engines.ejs)
+
 // LOG.info(`Server Launch at port: ${port}`);
 
 // By default, Express does not serve static files.
