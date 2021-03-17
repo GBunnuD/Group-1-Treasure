@@ -75,7 +75,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 // load seed data
-require('./utils/seeder.js')(app);
+// require('./utils/seeder.js')(app);
 
 // Use Express middleware to configure routing
 // const routing = require('./routes/router.js');

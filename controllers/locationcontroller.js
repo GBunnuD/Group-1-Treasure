@@ -1,14 +1,12 @@
 
 const express = require('express');
 const api = express.Router();
-const find = require('lodash.find');
-const LOG = require('../utils/logger');
 const Model = require('../models/location');  
 let bodyParser = require('body-parser');
 
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
-const notfoundstring = 'Could not find developer with id=';
+
 
 
 exports.create = (req, res) => {
@@ -24,7 +22,7 @@ exports.create = (req, res) => {
 }
 
 
-// GET Data from Mongo
+// GET ALL  Data from Mongo
 exports.findall = (req, res) => {
   Model.find()
   .then(locations => {
