@@ -5,6 +5,7 @@
     "main": "index.js",
     "dependencies": {
         "body-parser": "^1.19.0",
+        "brew": "0.0.8",
         "consolidate": "^0.16.0",
         "cookie-parser": "^1.4.5",
         "dotenv": "^8.2.0",
@@ -13,6 +14,7 @@
         "express": "^4.17.1",
         "express-ejs-layouts": "^2.5.0",
         "helmet": "^4.4.1",
+        "heroku": "^7.50.0",
         "lodash": "^4.17.21",
         "lodash.find": "^4.6.0",
         "md5": "^2.3.0",
@@ -27,7 +29,6 @@
     "scripts": {
         "start": "nodemon index.js",
         "start:prod": "node index.js"
-        
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
