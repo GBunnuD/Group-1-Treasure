@@ -11,9 +11,9 @@ const locationController = require('../controllers/locationcontroller')
 router.get('/', (req, res,next) => {
     res.render('../views/index', { title: 'index' })
 })
-router.get('/index', (req, res,next) => {
-  res.render('../views/index', { title: 'index' })
-})
+// router.get('/index', (req, res,next) => {
+//   res.render('../views/index', { title: 'index' })
+// })
 
 router.post('/location', locationController.create);
 router.get('/location', locationController.findall);
