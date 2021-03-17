@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -22,20 +22,15 @@ const app = express();
 require('dotenv').config({path:'config.env'});
 
 
-/**
- * Normalize a port into a number, string, or false.
- */
+
 var http = require('http');
 
-const md5 = require('md5');
-
-const port = process.env.PORT || 3000
 
 
-const vars = dotenv.config({ path: '.env' });
-if (vars.error) {
-  throw vars.error;
-}
+// const vars = env.config({ path: '.env' });
+// if (vars.error) {
+//   throw vars.error;
+// }
 //
 app.use(express.static('public'));
 
