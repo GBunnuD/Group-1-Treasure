@@ -62,7 +62,7 @@ app.use('/', router)
 app.use(bodyParser.json({ type: "application/*+json" }));
 app.use(express.static(__dirname + '/public/'));
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`, app.settings.env)
 })
 
 
