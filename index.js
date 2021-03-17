@@ -29,7 +29,7 @@ var http = require('http');
 
 const md5 = require('md5');
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 
 
 const vars = dotenv.config({ path: '.env' });
@@ -62,13 +62,13 @@ const router = require('./routes/router')
 app.use('/', router)
 app.use(bodyParser.json({ type: "application/*+json" }));
 app.use(express.static(__dirname + '/public/'));
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`, app.settings.env)
-})
+// app.listen(port, () => {
+//     console.log(`Example app listening at http://localhost:${port}`, app.settings.env)
+// })
 
 
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
-  app.listen(3001, function () {
+  app.listen(3000, function () {
   return "Connected to Database"
   
 })
