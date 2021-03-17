@@ -36,7 +36,9 @@ exports.delete = (req, res) => {
               message: "Location not found with id " + req.params.locationId
           });                
       }
-     
+      return res.status(500).send({
+        message: "Could not delete Location with id " + req.params.locationId
+    });
   });
 }
 
