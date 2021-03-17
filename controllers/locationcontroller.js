@@ -24,3 +24,10 @@ exports.create = (req, res) => {
 }
 
 
+// GET Data from Mongo
+exports.findall = (req, res) => {
+  Model.find()
+  .then(locations => {
+      res.send(locations);
+  });
+}
