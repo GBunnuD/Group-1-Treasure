@@ -28,7 +28,12 @@
     display: table-cell;
 }
 
-
+#bgrone {
+    background-color: #7aeb7a;
+    text-align: center;
+    height: 400px;
+    width: 60%;
+}
 
 #lbl2,
 #lbl {
