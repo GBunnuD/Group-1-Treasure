@@ -45,7 +45,11 @@
     text-align: center;
 }
 
-
+#layout {
+    padding-top: 5.5%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
 
 #lbl,
 #bgrtwo {
