@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const helmet = require('helmet');
+var env = require('dotenv').config()
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const engines = require('consolidate');
@@ -67,7 +68,7 @@ app.listen(port, () => {
 
 
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
-  app.listen(3000, function () {
+  app.listen(3001, function () {
   return "Connected to Database"
   
 })
