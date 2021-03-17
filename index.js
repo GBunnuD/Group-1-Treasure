@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const engines = require('consolidate');
+const mongoose = require("mongoose");
 const expressLayouts = require('express-ejs-layouts');
 
 // const LOG = require('./utils/logger');
@@ -17,6 +18,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // create an Express app
 const app = express();
+require('dotenv').config({path:'config.env'});
 // LOG.info('app created');
 
 // Helper functions defined first ...................................
@@ -31,7 +33,7 @@ var http = require('http');
 // const app = express();
 const md5 = require('md5');
 // const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 /**
  * Load environment variables from .env file,
@@ -71,11 +73,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(expressLayouts);
 
+
 // load seed data
 require('./utils/seeder.js')(app);
 
 // Use Express middleware to configure routing
-const routing = require('./routes/router.js');
+// const routing = require('./routes/router.js');
 
 app.set('view engine', 'ejs')
 app.engine('ejs', engines.ejs)
@@ -89,4 +92,12 @@ app.use(bodyParser.json({ type: "application/*+json" }));
 app.use(express.static(__dirname + '/public/'));
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
+})
+mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) =>{
+  app.listen(3000, function () {
+  return "Connected to Database"
+  
+})
+}).catch((e) => {
+ console.log(e,"--error")
 })

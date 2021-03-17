@@ -3,15 +3,24 @@ const express = require('express');
 const api = express.Router();
 const find = require('lodash.find');
 const LOG = require('../utils/logger');
-const Model = require('../models/location');
+const Model = require('../models/location');  
+let bodyParser = require('body-parser');
 
+api.use(bodyParser.json());
+api.use(bodyParser.urlencoded({ extended: true }));
 const notfoundstring = 'Could not find developer with id=';
 
-// RESPOND WITH JSON DATA  --------------------------------------------
 
-// GET all JSON
-api.get('/findall', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  const data = req.app.locals.locations.query;
-  res.send(JSON.stringify(data));
-});
+exports.create = (req, res) => {
+  const location = new Model({
+      name: req.body.name,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      radius: 100,
+    });
+   location.save(err => {
+               res.send({ status: 200, response: "Location Table is created successfully" });
+    } )
+}
+
+
