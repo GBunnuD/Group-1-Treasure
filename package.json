@@ -25,7 +25,7 @@
         "pg-promise": "^10.9.5"
     },
     "scripts": {
-        "start": "nodemon index.js",
+        "start": "node index.js",
         "start:prod": "node dist/main"
     },
     "devDependencies": {
