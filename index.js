@@ -5,7 +5,10 @@ const logger = require('morgan');
 const helmet = require('helmet');
 var env = require('dotenv').config()
 const bodyParser = require('body-parser');
-
+const cookieParser = require('cookie-parser');
+const engines = require('consolidate');
+const mongoose = require("mongoose");
+const expressLayouts = require('express-ejs-layouts');
 
 // const LOG = require('./utils/logger');
 
