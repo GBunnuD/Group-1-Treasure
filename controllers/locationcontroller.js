@@ -9,7 +9,17 @@ api.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-
+exports.create = (req, res) => {
+  const location = new Model({
+      name: req.body.name,
+      latitude: req.body.latitude,
+      longitude: req.body.longitude,
+      radius: 100,
+    });
+   location.save(err => {
+               res.send({ status: 200, response: "Location Table is created successfully" });
+    } )
+}
 
 exports.delete = (req, res) => {
   LocationSchema.findByIdAndRemove(req.params.locationId)
