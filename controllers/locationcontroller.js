@@ -30,7 +30,13 @@ exports.delete = (req, res) => {
           });
       }
       res.send({message: "Location deleted successfully!"});
-  
+    }).catch(err => {
+      if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+          return res.status(404).send({
+              message: "Location not found with id " + req.params.locationId
+          });                
+      }
+     
   });
 }
 
