@@ -15,7 +15,7 @@ router.get('/', (req, res,next) => {
 //   res.render('../views/index', { title: 'index' })
 // })
 
-router.post('/location', locationController.create);
+router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 
 
