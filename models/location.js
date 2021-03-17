@@ -10,15 +10,7 @@ const LocationSchema = new mongoose.Schema({
     unique: false,
   },
   
-  longitude: {
-    type:Number,
-    // required: true,
-    
-  },
-  latitude: {
-    type: Number,
-    // required: true,   
-  },
+ 
  
 });
 
