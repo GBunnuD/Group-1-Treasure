@@ -21,6 +21,18 @@ exports.create = (req, res) => {
     } )
 }
 
+exports.delete = (req, res) => {
+  LocationSchema.findByIdAndRemove(req.params.locationId)
+  .then(location => {
+      if(!location) {
+          return res.status(404).send({
+              message: "Location not found with id " + req.params.locationId
+          });
+      }
+      res.send({message: "Location deleted successfully!"});
+  
+  });
+}
 
 // GET ALL  Data from Mongo
 exports.findall = (req, res) => {
