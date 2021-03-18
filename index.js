@@ -20,9 +20,6 @@ const app = express();
 
 var http = require('http');
 
-const md5 = require('md5');
-const bodyParser = require('body-parser');
-const port = process.env.PORT || 3000
 
 
 const vars = dotenv.config({ path: '.env' });
@@ -47,8 +44,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(expressLayouts);
 
-// load seed data
-require('./utils/seeder.js')(app);
+
 
 // Use Express middleware to configure routing
 const routing = require('./routes/router.js');
@@ -62,14 +58,12 @@ app.engine('ejs', engines.ejs)
 const router = require('./routes/router')
 app.use('/', router)
 app.use(bodyParser.json({ type: "application/*+json" }));
+
 app.use(express.static(__dirname + '/public/'));
-// app.listen(port, () => {
-//     console.log(`Example app listening at http://localhost:${port}`)
-// })
+
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) => {
     app.listen(3000, function() {
         return "Connected to Database"
-
     })
 }).catch((e) => {
     console.log(e, "--error")
