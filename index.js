@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const mongoose = require("mongoose");
 const engines = require('consolidate');
 const expressLayouts = require('express-ejs-layouts');
+const port = process.env.PORT || 3000
 require('dotenv').config({ path: 'ENV_FILENAME' });
 
 
@@ -62,7 +63,7 @@ app.use(bodyParser.json({ type: "application/*+json" }));
 app.use(express.static(__dirname + '/public/'));
 
 mongoose.connect(process.env.ATLAS_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then((res) => {
-    app.listen(3000, function() {
+    app.listen(port, function() {
         return "Connected to Database"
     })
 }).catch((e) => {
