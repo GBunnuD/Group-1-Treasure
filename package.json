@@ -14,7 +14,7 @@
         "express": "^4.17.1",
         "express-ejs-layouts": "^2.5.0",
         "helmet": "^4.4.1",
-        "heroku": "^7.50.0",
+        "heroku": "^7.51.0",
         "lodash": "^4.17.21",
         "lodash.find": "^4.6.0",
         "md5": "^2.3.0",
@@ -27,8 +27,7 @@
         "pg-promise": "^10.9.5"
     },
     "scripts": {
-        "start": "nodemon index.js",
-        "start:prod": "node index.js"
+        "start": "nodemon index.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
