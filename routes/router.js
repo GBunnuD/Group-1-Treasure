@@ -17,6 +17,8 @@ router.get('/', (req, res,next) => {
 
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
+router.get('/location/delete', locationController.delete);
+router.get('/location/findbyid', locationController.findbyid);
 
 
 module.exports = router;

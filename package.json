@@ -28,7 +28,7 @@
     },
     "scripts": {
         "start": "node index.js",
-        "startdev":"nodemon index.js"
+        "startdev": "nodemon index.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
