@@ -1,14 +1,14 @@
-
-
 <!DOCTYPE html>
 <html>
-<head>
-<title>Font Awesome 5 Icons</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!--Get your own code at fontawesome.com-->
+<head>
+  <title>Font Awesome 5 Icons</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!--Get your own code at fontawesome.com-->
 </head>
+
 <body>
   <table class="table table-inverse">
     <thead>
@@ -21,7 +21,7 @@
         <th>Delete</th>
       </tr>
     </thead>
-  
+
     <tbody>
       <% for(var i=0; i < locations.length; i++) { %>
       <tr>
@@ -30,7 +30,13 @@
         <td><%= locations[i].longitude %></td>
         <td><%= locations[i].latitude %></td>
         <td><a href="./editview?<%= locations[i].lId %>"><span><i class="material-icons">edit</i></span></a></td>
-        <td><i class="material-icons">delete_sweep</i></td>
+
+        <td>
+          <a class="btn" data-id=<%= locations[i]._id %>>
+            <span class ="text-gradient"><i class="fa-times"></i></span>
+          </a>
+        
+        </td>
       </tr>
       <% } %>
     </tbody>
@@ -39,8 +45,5 @@
 
 
 </body>
+
 </html>
-
-
-
-  
