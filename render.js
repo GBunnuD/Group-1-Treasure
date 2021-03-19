@@ -25,5 +25,5 @@ exports.updateLocation = (req, res) => {
         })
 }
 exports.addlocation = (req, res) => {
-    res.render('create');
+    res.render("create");
 }
