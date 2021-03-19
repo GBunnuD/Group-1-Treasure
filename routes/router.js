@@ -13,6 +13,10 @@ const locationController = require('../controllers/locationcontroller')
 router.get('/', (req, res, next) => {
     res.render('../views/index', { title: 'index' })
 })
+router.get('/GD', (req, res, next) => {
+    res.render('../views/GD', { title: 'GD' })
+})
+
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
 router.get('/create', services.addlocation);

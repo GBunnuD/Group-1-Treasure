@@ -23,20 +23,20 @@ exports.create = (req, res) => {
 
 }
 
-exports.delete = (req, res)=>{
+exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Model.findByIdAndRemove(id)
+    Model.findByIdAndDelete(id)
         .then(data => {
-            if(!data){
-                res.status(404).send({ message : `Cannot Delete with id ${id}. Maybe id is wrong`})
-            }else{
+            if (!data) {
+                res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
+            } else {
                 res.send({
-                    message : "User was deleted successfully!"
+                    message: "User was deleted successfully!"
                 })
             }
         })
-        .catch(err =>{
+        .catch(err => {
             res.status(500).send({
                 message: "Could not delete User with id=" + id
             });
@@ -79,14 +79,14 @@ exports.edit = (req, res) => {
             message: "Product content can not be empty"
         });
     }
-    
+
 
     // Find and update locations 
     Model.findByIdAndUpdate(req.params.lId, {
             lId: req.body.lId,
         }, { new: true })
         .then(location => {
-            
+
             if (!location) {
                 return res.status(404).send({
                     message: "LocationId not found with id " + req.params.lId
