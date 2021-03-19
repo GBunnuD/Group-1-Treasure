@@ -75,26 +75,28 @@ exports.edit = (req, res) => {
             message: "Product content can not be empty"
         });
     }
+    
 
     // Find and update locations 
     Model.findByIdAndUpdate(req.params.lId, {
-            name: req.body.name,
+            lId: req.body.lId,
         }, { new: true })
         .then(location => {
+            
             if (!location) {
                 return res.status(404).send({
-                    message: "LocationId not found with id " + req.params.locationId
+                    message: "LocationId not found with id " + req.params.lId
                 });
             }
             res.send(location);
         }).catch(err => {
             if (err.kind === 'ObjectId') {
                 return res.status(404).send({
-                    message: "Product not found with id " + req.params.locationId
+                    message: "Product not found with id " + req.params.lId
                 });
             }
             return res.status(500).send({
-                message: "Something wrong updating note with id " + req.params.locationId
+                message: "Something wrong updating note with id " + req.params.lId
             });
         });
 }
