@@ -1,4 +1,3 @@
-
 const express = require('express');
 const api = express.Router();
 const Model = require('../models/location');
@@ -10,63 +9,92 @@ api.use(bodyParser.urlencoded({ extended: true }));
 
 
 exports.create = (req, res) => {
-  const location = new Model({
-    lId: req.body.lId,
-    name: req.body.name,
-    latitude: req.body.latitude,
-    longitude: req.body.longitude,
-  });
-  location.save(err => {
-    res.send({ status: 200, response: "Location Table is created successfully" });
-  })
+    const location = new Model({
+        lId: req.body.lId,
+        name: req.body.name,
+        latitude: req.body.latitude,
+        longitude: req.body.longitude,
+    });
+    location.save(err => {
+        res.send({ status: 200, response: "Location Table is created successfully" });
+    })
 }
 
 exports.delete = (req, res) => {
-  Model.findByIdAndRemove(req.params.lId)
-    .then(location => {
-      if (!location) {
-        return res.status(404).send({
-          message: "Location not found with id " + req.params.lId
+    Model.findByIdAndRemove(req.params.lId)
+        .then(location => {
+            if (!location) {
+                return res.status(404).send({
+                    message: "Location not found with id " + req.params.lId
+                });
+            }
+            res.send({ message: "Location deleted successfully!" });
+        }).catch(err => {
+            if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+                return res.status(404).send({
+                    message: "Location not found with id " + req.params.lId
+                });
+            }
+            return res.status(500).send({
+                message: "Could not delete Location with id " + req.params.lId
+            });
         });
-      }
-      res.send({ message: "Location deleted successfully!" });
-    }).catch(err => {
-      if (err.kind === 'ObjectId' || err.name === 'NotFound') {
-        return res.status(404).send({
-          message: "Location not found with id " + req.params.lId
-        });
-      }
-      return res.status(500).send({
-        message: "Could not delete Location with id " + req.params.lId
-      });
-    });
 }
 
 // GET ALL  Data from Mongo
 exports.findall = (req, res) => {
-  Model.find()
-    .then(location => {
-      res.send(location);
-    });
+    Model.find()
+        .then(location => {
+            res.send(location);
+        });
 }
 
 exports.findbyid = (req, res) => {
-  Model.findById(req.params.lId)
-    .then(locations => {
-      if (!locations) {
-        return res.status(404).send({
-          message: "Location not found with id " + req.params.lId
+    Model.findById(req.params.lId)
+        .then(locations => {
+            if (!locations) {
+                return res.status(404).send({
+                    message: "Location not found with id " + req.params.lId
+                });
+            }
+            res.send(locations);
+        }).catch(err => {
+            if (err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "location not found with id " + req.params.lId
+                });
+            }
+            return res.status(500).send({
+                message: "Something wrong retrieving location with id " + req.params.lId
+            });
         });
-      }
-      res.send(locations);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "location not found with id " + req.params.lId
+}
+exports.edit = (req, res) => {
+    if (!req.body) {
+        return res.status(400).send({
+            message: "Product content can not be empty"
         });
-      }
-      return res.status(500).send({
-        message: "Something wrong retrieving location with id " + req.params.lId
-      });
-    });
+    }
+
+    // Find and update locations 
+    Model.findByIdAndUpdate(req.params.lId, {
+            name: req.body.name,
+        }, { new: true })
+        .then(location => {
+            if (!location) {
+                return res.status(404).send({
+                    message: "LocationId not found with id " + req.params.locationId
+                });
+            }
+            res.send(location);
+        }).catch(err => {
+            if (err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "Product not found with id " + req.params.locationId
+                });
+            }
+            return res.status(500).send({
+                message: "Something wrong updating note with id " + req.params.locationId
+            });
+        });
 }
