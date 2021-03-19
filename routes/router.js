@@ -26,6 +26,7 @@ router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 router.get('/location/delete', locationController.delete);
 router.get('/location/findbyid', locationController.findbyid);
+router.get('/location/edit',locationController.edit);
 
 
 module.exports = router;
