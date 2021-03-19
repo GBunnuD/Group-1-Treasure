@@ -16,7 +16,9 @@ router.get('/', (req, res, next) => {
 router.get('/GD', (req, res, next) => {
     res.render('../views/GD', { title: 'GD' })
 })
-
+router.get('/aboutme', (req, res, next) => {
+    res.render('../views/aboutme', { title: 'aboutme' })
+})
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
 router.get('/create', services.addlocation);
