@@ -17,29 +17,33 @@ exports.create = (req, res) => {
     });
     location.save(err => {
         res.send({ status: 200, response: "Location Table is created successfully" });
+        res.redirect('localhost:3000/display');
+
     })
+
 }
 
-exports.delete = (req, res) => {
-    Model.findByIdAndRemove(req.params.lId)
-        .then(location => {
-            if (!location) {
-                return res.status(404).send({
-                    message: "Location not found with id " + req.params.lId
-                });
+exports.delete = (req, res)=>{
+    const id = req.params.id;
+
+    Model.findByIdAndRemove(id)
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message : `Cannot Delete with id ${id}. Maybe id is wrong`})
+            }else{
+                res.send({
+                    message : "User was deleted successfully!"
+                })
             }
-            res.send({ message: "Location deleted successfully!" });
-        }).catch(err => {
-            if (err.kind === 'ObjectId' || err.name === 'NotFound') {
-                return res.status(404).send({
-                    message: "Location not found with id " + req.params.lId
-                });
-            }
-            return res.status(500).send({
-                message: "Could not delete Location with id " + req.params.lId
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: "Could not delete User with id=" + id
             });
         });
 }
+
+
 
 // GET ALL  Data from Mongo
 exports.findall = (req, res) => {
