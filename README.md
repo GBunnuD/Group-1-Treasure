@@ -5,6 +5,8 @@
 - As user  touches  the first color to request a treasure  location.
 - When the user clicks on the scound box, distance is calculated between the current location of the user and choosen Quest coordinates.
 
+# About GD: https://group-1-treasure.herokuapp.com/GD
+
 # Stack for the Application:
 - HTML.
 - CSS.
