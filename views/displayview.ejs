@@ -29,7 +29,7 @@
         <td><%= locations[i].name %></td>
         <td><%= locations[i].longitude %></td>
         <td><%= locations[i].latitude %></td>
-        <td><i class="material-icons">edit</i></td>
+        <td><a href="./editview?<%= locations[i].lId %>"><span><i class="material-icons">edit</i></span></a></td>
         <td><i class="material-icons">delete_sweep</i></td>
       </tr>
       <% } %>
