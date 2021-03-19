@@ -6,7 +6,7 @@ exports.displays = (req, res) => {
     axios.get('https://group-1-treasure.herokuapp.com/location')
         .then(function(response) {
             res.render('displayview', { locations: response.data });
-            console.log(response);
+            // console.log(response);
         })
         .catch(err => {
             res.send(err);
@@ -15,9 +15,10 @@ exports.displays = (req, res) => {
 
 }
 exports.updateLocation = (req, res) => {
-    axios.get('https://group-1-treasure.herokuapp.com/location', { params: { id: req.query.id } })
+    axios.get('loacalhost:3000/location/edit', { params: { id: req.query.lId } })
         .then(function(locationData) {
-            res.render("editview", { locations: locationData.data })
+            res.render("editview", { locationv: locationData.data })
+            console.log(locationData);
         })
         .catch(err => {
             res.send(err);
