@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
 })
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
-router.get('create', services.addlocation);
+router.get('/create', services.addlocation);
 // router.get('/display', (req, res,next) => {
 //   res.render('../views/displayview', { title: 'table data' })
 // })
@@ -23,11 +23,11 @@ router.get('create', services.addlocation);
 //   res.render('../views/index', { title: 'index' })
 // })
 
-router.post('/locations', locationController.create);
+router.post('/location', locationController.create);
 router.get('/location', locationController.findall);
-router.get('/location/delete', locationController.delete);
+router.delete('/location/delete', locationController.delete);
 router.get('/location/findbyid', locationController.findbyid);
-router.get('/location/edit', locationController.edit);
+router.put('/location/edit', locationController.edit);
 
 
 module.exports = router;
