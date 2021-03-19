@@ -24,3 +24,6 @@ exports.updateLocation = (req, res) => {
             res.send(err);
         })
 }
+exports.addlocation = (req, res) => {
+    res.render('create');
+}

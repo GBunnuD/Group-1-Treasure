@@ -15,6 +15,7 @@ router.get('/', (req, res, next) => {
 })
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
+router.get('create', services.addlocation);
 // router.get('/display', (req, res,next) => {
 //   res.render('../views/displayview', { title: 'table data' })
 // })
@@ -26,7 +27,7 @@ router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 router.get('/location/delete', locationController.delete);
 router.get('/location/findbyid', locationController.findbyid);
-router.get('/location/edit',locationController.edit);
+router.get('/location/edit', locationController.edit);
 
 
 module.exports = router;
