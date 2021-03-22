@@ -49,7 +49,7 @@ exports.delete = (req, res) => {
 exports.findall = (req, res) => {
     Model.find()
         .then(location => {
-            console.log(location.toJSON(), "===> location")
+            // console.log(location.toJSON(), "===> location")
             res.send(location);
         });
 }
