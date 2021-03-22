@@ -19,6 +19,10 @@
 # Heroku hosted link : 
 
   https://group-1-treasure.herokuapp.com/
+  
+ # create heroku hosted
+ 
+ https://group-1-treasure.herokuapp.com/create
 
 # Team Members.
  <table>
