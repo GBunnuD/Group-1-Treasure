@@ -2,45 +2,53 @@
 <html>
 
 <head>
-  <title>Font Awesome 5 Icons</title>
+    <title>Font Awesome 5 Icons</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!--Get your own code at fontawesome.com-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Get your own code at fontawesome.com-->
 </head>
 
 <body>
-  <table class="table table-inverse">
-    <thead>
-      <tr>
-        <th>LocationID</th>
-        <th>Name</th>
-        <th>longitude</th>
-        <th>Latitude</th>
-        <th>edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
+    <table class="table table-inverse">
+        <thead>
+            <tr>
+                <th>LocationID</th>
+                <th>Name</th>
+                <th>longitude</th>
+                <th>Latitude</th>
+                <th>edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
 
-    <tbody>
-      <% for(var i=0; i < locations.length; i++) { %>
-      <tr>
-        <td><%= locations[i].lId %></td>
-        <td><%= locations[i].name %></td>
-        <td><%= locations[i].longitude %></td>
-        <td><%= locations[i].latitude %></td>
-        <td><a href="./editview?<%= locations[i].lId %>"><span><i class="material-icons">edit</i></span></a></td>
-
-        <td>
-          <a class="btn" data-id=<%= locations[i]._id %>>
+        <tbody>
+            <% for(var i=0; i < locations.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= locations[i]._id %>
+                    </td>
+                    <td>
+                        <%= locations[i].name %>
+                    </td>
+                    <td>
+                        <%= locations[i].longitude %>
+                    </td>
+                    <td>
+                        <%= locations[i].latitude %>
+                    </td>
+                    <td><a href="./editview?<%= locations[i]._id %>"><span><i class="material-icons">edit</i></span></a></td>
+                    <td>
+                        <a class="btn" data-id=<%=locations[i]._id %>>
             <span class ="text-gradient"><i class="fa-times"></i></span>
           </a>
-        
-        </td>
-      </tr>
-      <% } %>
-    </tbody>
-  </table>
+
+
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
 
 
 

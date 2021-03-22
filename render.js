@@ -6,16 +6,17 @@ exports.displays = (req, res) => {
     axios.get('https://group-1-treasure.herokuapp.com/location')
         .then(function(response) {
             res.render('displayview', { locations: response.data });
+            // console.log(JSON.stringify(response), "==> responssss");
             // console.log(response);
         })
         .catch(err => {
             res.send(err);
         })
-
-
 }
+
+
 exports.updateLocation = (req, res) => {
-    axios.get('loacalhost:3000/location/edit', { params: { id: req.query.lId } })
+    axios.get('loacalhost:3000/location/edit', { params: { id: req.query._id } })
         .then(function(locationData) {
             res.render("editview", { locationv: locationData.data })
             console.log(locationData);

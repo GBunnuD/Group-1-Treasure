@@ -10,14 +10,14 @@ api.use(bodyParser.urlencoded({ extended: true }));
 
 exports.create = (req, res) => {
     const location = new Model({
-        lId: req.body.lId,
+        _id: req.body._id,
         name: req.body.name,
         latitude: req.body.latitude,
         longitude: req.body.longitude,
     });
     location.save(err => {
         res.send({ status: 200, response: "Location Table is created successfully" });
-        res.redirect('localhost:3000/display');
+        // res.send('localhost:3000/display');
 
     })
 
@@ -38,7 +38,7 @@ exports.delete = (req, res) => {
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete User with id=" + id
+                message: "Could not delete User with id=" + _id
             });
         });
 }
@@ -49,6 +49,7 @@ exports.delete = (req, res) => {
 exports.findall = (req, res) => {
     Model.find()
         .then(location => {
+            console.log(location.toJSON(), "===> location")
             res.send(location);
         });
 }

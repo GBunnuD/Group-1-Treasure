@@ -10,15 +10,21 @@ const services = require('../render');
 const locationController = require('../controllers/locationcontroller')
 
 
+
+
+
 router.get('/', (req, res, next) => {
     res.render('../views/index', { title: 'index' })
 })
+
 router.get('/GD', (req, res, next) => {
     res.render('../views/GD', { title: 'GD' })
 })
+
 router.get('/aboutme', (req, res, next) => {
     res.render('../views/aboutme', { title: 'aboutme' })
 })
+
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
 router.get('/create', services.addlocation);
@@ -29,10 +35,10 @@ router.get('/create', services.addlocation);
 //   res.render('../views/index', { title: 'index' })
 // })
 
-router.post('/location', locationController.create);
+router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
-router.delete('/location/delete', locationController.delete);
-router.get('/location/findbyid', locationController.findbyid);
+router.delete('/location/delete:id', locationController.delete);
+router.get('/location/findbyid:id', locationController.findbyid);
 router.put('/location/edit', locationController.edit);
 
 
