@@ -3,7 +3,7 @@ const axios = require('axios');
 
 exports.displays = (req, res) => {
     // Make a get request to /api/users
-    axios.get('loacalhost:3000/location/locations')
+    axios.get('https://group-1-treasure.herokuapp.com/location')
         .then(function(response) {
             res.render('displayview', { locations: response.data });
             // console.log(JSON.stringify(response), "==> responssss");
