@@ -24,6 +24,11 @@
  
  https://group-1-treasure.herokuapp.com/create
  
+#  display data 
+
+https://group-1-treasure.herokuapp.com/display
+ 
+ 
  # Github source link 
  
  https://github.com/GD-Prasad/Group-1-Treasure
