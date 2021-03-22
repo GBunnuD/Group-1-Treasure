@@ -23,6 +23,7 @@ const LocationSchema = new mongoose.Schema({
     }
 
 
+
 });
 // autoIncrement.initialize(mongoose.connection);
 // LocationSchema.plugin(autoIncrement.plugin, {
