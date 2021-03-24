@@ -26,7 +26,7 @@ router.get('/aboutme', (req, res, next) => {
 })
 
 router.get('/display', services.displays);
-router.get('/editview', services.updateLocation);
+// router.get('/editview', services.updateLocation);
 router.get('/create', services.addlocation);
 router.get('/editview/:locationId', services.editLocation); //srk
 
