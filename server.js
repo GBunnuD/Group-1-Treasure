@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const engines = require('consolidate');
 const expressLayouts = require('express-ejs-layouts');
 const port = process.env.PORT || 3001
-require('dotenv').config({ path: 'ENV_FILENAME' });
+require('dotenv').config({ silent: true });
 // var $ = jQuery;
 
 
