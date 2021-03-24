@@ -37,7 +37,7 @@ router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 
 router.post('/location/edit/:id', locationController.edit);
-router.post('/location/delete/:id', locationController.delete)
+router.delete('/location/delete/:id', locationController.delete)
 
 
 module.exports = router;
