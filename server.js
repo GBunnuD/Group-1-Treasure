@@ -16,19 +16,18 @@ const port = process.env.PORT || 3001
 
 
 // env variables
-const hostname = process.env.HOSTNAME;
-const isProduction = process.env.NODE_ENV === 'production';
+
 
 const app = express();
 
-var http = require('http');
 
 
 
-const vars = dotenv.config({ path: '.env' });
-if (vars.error) {
-    throw vars.error;
-}
+
+// const vars = dotenv.config({ path: '.env' });
+// if (vars.error) {
+//     throw vars.error;
+// }
 
 app.use(express.static('public'));
 
