@@ -22,11 +22,11 @@
   
  # create heroku hosted
  
- https://group-1-treasure.herokuapp.com/location/create
+ https://group-1-treasure.herokuapp.com/location/location/create
  
 #  display data 
 
-https://group-1-treasure.herokuapp.com/location/display
+https://group-1-treasure.herokuapp.com/location/location/display
  
  
  # Github source link 
