@@ -16,6 +16,7 @@
         "express-ejs-layouts": "^2.5.0",
         "helmet": "^4.4.1",
         "heroku": "^7.51.0",
+        "jQuery": "^1.7.4",
         "lodash": "^4.17.21",
         "lodash.find": "^4.6.0",
         "md5": "^2.3.0",
@@ -30,8 +31,8 @@
         "window": "^4.2.7"
     },
     "scripts": {
-        "start": "node index.js",
-        "startdev": "nodemon index.js"
+        "start": "node server.js",
+        "start-dev": "nodemon index.js"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"

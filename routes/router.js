@@ -28,6 +28,9 @@ router.get('/aboutme', (req, res, next) => {
 router.get('/display', services.displays);
 router.get('/editview', services.updateLocation);
 router.get('/create', services.addlocation);
+router.get('/editview/:locationId', services.editLocation); //srk
+
+// router.get('update-location', services.updateLocation)
 // router.get('/display', (req, res,next) => {
 //   res.render('../views/displayview', { title: 'table data' })
 // })
@@ -37,9 +40,9 @@ router.get('/create', services.addlocation);
 
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
-router.delete('/location/delete:id', locationController.delete);
-router.get('/location/findbyid:id', locationController.findbyid);
-router.put('/location/edit', locationController.edit);
+router.delete('/location/delete:/id', locationController.delete);
+// router.get('/location/findbyid/:id', locationController.findbyid);
+router.post('/location/edit/:id', locationController.edit);
 
 
 module.exports = router;
