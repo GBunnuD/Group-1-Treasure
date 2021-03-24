@@ -1,4 +1,5 @@
 const dotenv = require('dotenv');
+var env = require('dotenv').config({ silent: true })
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -9,8 +10,8 @@ const mongoose = require("mongoose");
 const engines = require('consolidate');
 const expressLayouts = require('express-ejs-layouts');
 const port = process.env.PORT || 3001
-require('dotenv').config({ silent: true });
-// var $ = jQuery;
+    // require('dotenv').config({ silent: true });
+    // var $ = jQuery;
 
 
 
