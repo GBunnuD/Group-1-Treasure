@@ -18,7 +18,7 @@ exports.create = (req, res) => {
     });
     location.save(err => {
         // res.send({ status: 200, response: "Location Table is created successfully" });
-        res.redirect('/display');
+        res.redirect('/location/display');
         // res.send('localhost:3000/display');
 
     })
@@ -37,7 +37,7 @@ exports.delete = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
             } else {
-                res.redirect('/display')
+                res.redirect('/location/display')
                     // res.send({
                     //     message: "User was deleted successfully!"
                     // })
@@ -102,7 +102,7 @@ exports.edit = (req, res) => {
                 res.status(404).send({ message: `Cannot Update user with ${id}. Maybe user not found!` })
             } else {
                 // res.send(data)
-                res.redirect('/display')
+                res.redirect('/location/display')
 
             }
         })
