@@ -35,10 +35,14 @@
                         <td>
                             <a href="/editview/<%= locations[i]._id%>" class="btn border-shadow update">
                                 <span class="text-gradient"><i>edit</i></span>
-                            </a>
-                            <a class="btn border-shadow delete" data-id=<%=locations[i]._id%> >
-                              <span class="text-gradient"><i class="fas fa-times"></i></span>
-                          </a>
+
+                        </td>
+                        <td>
+                            <form action="/location/delete/<%= locations[i]._id %>" method="POST">
+                                <div class="form-group ">
+                                    <button type="submit " class="btn text-dark update ">Delete<%= locations[i]._id %></button>
+                                </div>
+                            </form>
                         </td>
                     </tr>
                     <% } %>

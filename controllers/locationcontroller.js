@@ -2,6 +2,7 @@ const express = require('express');
 const api = express.Router();
 const Model = require('../models/location');
 let bodyParser = require('body-parser');
+const cons = require('consolidate');
 
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +17,8 @@ exports.create = (req, res) => {
         longitude: req.body.longitude,
     });
     location.save(err => {
-        res.send({ status: 200, response: "Location Table is created successfully" });
+        // res.send({ status: 200, response: "Location Table is created successfully" });
+        res.redirect('/display');
         // res.send('localhost:3000/display');
 
     })
@@ -26,14 +28,19 @@ exports.create = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Model.findByIdAndDelete(id)
+
+    console.log(id)
+    Model.findByIdAndRemove(id)
         .then(data => {
+            console.log(id, '=======>id');
+
             if (!data) {
                 res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
             } else {
-                res.send({
-                    message: "User was deleted successfully!"
-                })
+                res.redirect('/display')
+                    // res.send({
+                    //     message: "User was deleted successfully!"
+                    // })
             }
         })
         .catch(err => {
