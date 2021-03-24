@@ -26,17 +26,15 @@ router.get('/aboutme', (req, res, next) => {
 })
 
 router.get('/display', services.displays);
-// router.get('/editview', services.updateLocation);
+
 router.get('/create', services.addlocation);
 router.get('/editview/:locationId', services.editLocation);
-// router.get('/deleteview/:locationId', services.deletelocation);
+
 
 
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 
-// router.delete('/location/delete/:locationId', locationController.delete);
-// router.get('/location/findbyid/:id', locationController.findbyid);
 router.post('/location/edit/:id', locationController.edit);
 router.post('/location/delete/:id', locationController.delete)
 
