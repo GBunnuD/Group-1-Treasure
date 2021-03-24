@@ -25,10 +25,10 @@ router.get('/aboutme', (req, res, next) => {
     res.render('../views/aboutme', { title: 'aboutme' })
 })
 
-router.get('/display', services.displays);
+router.get('/location/display', services.displays);
 // router.get('/editview', services.updateLocation);
-router.get('/create', services.addlocation);
-router.get('/editview/:locationId', services.editLocation);
+router.get('/location/create', services.addlocation);
+router.get('/location/editview/:locationId', services.editLocation);
 // router.get('/deleteview/:locationId', services.deletelocation);
 
 
