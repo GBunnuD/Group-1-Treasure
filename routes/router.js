@@ -30,13 +30,6 @@ router.get('/display', services.displays);
 router.get('/create', services.addlocation);
 router.get('/editview/:locationId', services.editLocation); //srk
 
-// router.get('update-location', services.updateLocation)
-// router.get('/display', (req, res,next) => {
-//   res.render('../views/displayview', { title: 'table data' })
-// })
-// router.get('/index', (req, res,next) => {
-//   res.render('../views/index', { title: 'index' })
-// })
 
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);

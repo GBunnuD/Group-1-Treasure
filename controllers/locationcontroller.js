@@ -49,10 +49,10 @@ exports.delete = (req, res) => {
 exports.findall = (req, res) => {
     Model.find()
         .then(location => {
-            //res.send(data)
-            res.redirect('/display');
+            // res.send(data)
+            // res.redirect('display');
             // console.log(location.toJSON(), "===> location")
-            // res.send(location);
+            res.send(location);
         });
 }
 
