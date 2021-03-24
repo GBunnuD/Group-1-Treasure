@@ -1,4 +1,4 @@
-# Group-1-Treasure
+# Group-1-Treasure [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://group-1-treasure.herokuapp.com/)
 - A single page Web Application.
 - The page displays two color boxs.
 - When the user clicks on the first box, a coordinnate of the Quest will be set as the destination coordinates.
