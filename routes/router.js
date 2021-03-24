@@ -2,16 +2,10 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const md5 = require('md5')
 const router = express.Router()
-    // router.use(bodyParser.urlencoded({ extended: true }));
 var jsonParser = bodyParser.json()
 require('dotenv').config();
 const services = require('../render');
-// const axios = require('axios');
 const locationController = require('../controllers/locationcontroller')
-
-
-
-
 
 router.get('/', (req, res, next) => {
     res.render('../views/index', { title: 'index' })
@@ -30,12 +24,8 @@ router.get('/location/display', services.displays);
 router.get('/location/create', services.addlocation);
 router.get('/location/editview/:locationId', services.editLocation);
 
-
-
-
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
-
 router.post('/location/edit/:id', locationController.edit);
 router.delete('/location/delete/:id', locationController.delete)
 

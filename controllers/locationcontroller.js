@@ -38,9 +38,6 @@ exports.delete = (req, res) => {
                 res.status(404).send({ message: `Cannot Delete with id ${id}. Maybe id is wrong` })
             } else {
                 res.redirect('/location/display')
-                    // res.send({
-                    //     message: "User was deleted successfully!"
-                    // })
             }
         })
         .catch(err => {
@@ -56,33 +53,10 @@ exports.delete = (req, res) => {
 exports.findall = (req, res) => {
     Model.find()
         .then(location => {
-            // res.send(data)
-            // res.redirect('display');
-            // console.log(location.toJSON(), "===> location")
             res.send(location);
         });
 }
 
-// exports.findbyid = (req, res) => {
-// Model.findById(req.params.lId)
-//     .then(locations => {
-//         if (!locations) {
-//             return res.status(404).send({
-//                 message: "Location not found with id " + req.params.lId
-//             });
-//         }
-//         res.send(locations);
-//     }).catch(err => {
-//         if (err.kind === 'ObjectId') {
-//             return res.status(404).send({
-//                 message: "location not found with id " + req.params.lId
-//             });
-//         }
-//         return res.status(500).send({
-//             message: "Something wrong retrieving location with id " + req.params.lId
-//         });
-//     });
-// }
 
 exports.edit = (req, res) => {
 
@@ -112,28 +86,3 @@ exports.edit = (req, res) => {
 
 
 }
-
-
-
-// Find and update locations 
-// Model.findByIdAndUpdate(req.params.lId, {
-//         lId: req.body.lId,
-//     }, { new: true })
-//     .then(location => {
-
-//         if (!location) {
-//             return res.status(404).send({
-//                 message: "LocationId not found with id " + req.params.lId
-//             });
-//         }
-//         res.send(location);
-//     }).catch(err => {
-//         if (err.kind === 'ObjectId') {
-//             return res.status(404).send({
-//                 message: "Product not found with id " + req.params.lId
-//             });
-//         }
-//         return res.status(500).send({
-//             message: "Something wrong updating note with id " + req.params.lId
-//         });
-//     });
