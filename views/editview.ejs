@@ -1,4 +1,5 @@
 <!-- include header -->
+
 <head>
     <title>Talk-2-Treasure-7</title>
     <meta charset="utf-8" />
@@ -31,73 +32,78 @@
             The Hunt: Group 1
             <!-- <img src="./favicon_io (1)/favicon-32x32.png " alt="Icon "> Game -->
         </a>
+
     </nav>
     <style>
         #nav {
-    color: #ffffff;
-    background-color: #00674C;
-    text-align: center;
-    right: 0;
-    position: fixed;
-    left: 0;
-    width: 100%;
-    text-align: center;
-}
-
-#navIn {
-    color: #ffffff;
-    font-weight: bold;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 200%;
-}
-
-
-/* #navIn {
+            color: #ffffff;
+            background-color: #00674C;
+            text-align: center;
+            right: 0;
+            position: fixed;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+        
+        #navIn {
+            color: #ffffff;
+            font-weight: bold;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 200%;
+        }
+        /* #navIn {
     width: 35%;
 } */
-
-#bgrtwo {
-    background-color: #99cfe0;
-    text-align: center;
-    height: 400px;
-    display: table-cell;
-}
-
-#bgrone {
-    background-color: #7aeb7a;
-    text-align: center;
-    height: 400px;
-    width: 60%;
-}
-
-#lbl2,
-#lbl {
-    text-align: center;
-}
-
-#foot {
-    background-color: #00674C;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-}
-
-#layout {
-    padding-top: 5.5%;
-    padding-left: 15%;
-    padding-right: 15%;
-}
-
-#lbl,
-#bgrtwo {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
-}
+        
+        #bgrtwo {
+            background-color: #99cfe0;
+            text-align: center;
+            height: 400px;
+            display: table-cell;
+        }
+        
+        #bgrone {
+            background-color: #7aeb7a;
+            text-align: center;
+            height: 400px;
+            width: 60%;
+        }
+        
+        #lbl2,
+        #lbl {
+            text-align: center;
+        }
+        
+        #foot {
+            background-color: #00674C;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+        
+        #layout {
+            padding-top: 5.5%;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+        
+        #lbl,
+        #bgrtwo {
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+        }
     </style>
+    <br><br><br>
+    <div class="box-nav d-flex justify-between">
+        <div class="filter" style="padding-left: 1%;">
+            <a href="/location/display"><i class="fas fa-angle-double-left"></i> All Locations</a>
+        </div>
+    </div>
 </head>
 <!-- /include header -->
 
@@ -106,38 +112,34 @@
     <main id="site-main">
         <br><br><br><br>
         <div class="container">
-            <div class="box-nav d-flex justify-between">
-                <div class="filter">
-                    <a href="/location/display"><i class="fas fa-angle-double-left"></i> All Users</a>
-                </div>
-            </div>
+
             <div class="form-title text-center">
                 <h2 class="text-dark">Update Location</h2>
-                <span class="text-light">Use the below form to Update an account</span>
+
             </div>
 
 
             <form action="/location/edit/<%= locations._id %>" method="POST" id="update-location">
                 <div class="new_user">
                     <div class="form-group">
-                         <div class="row">
-                             <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-md-3">
 
-                             </div>
-                             <div class="col-md-3"style="text-align: center;">
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
                                 <label for="name" class="text"><strong>Name :</strong> </label>
                                 <label type="text" name="id" value="<%= locations._id %>"></label>
                             </div>
-                            <div class="col-md-3" >
+                            <div class="col-md-3">
                                 <input type="text" name="name" value="<%= locations.name %>" placeholder="Mark Stoenis">
                             </div>
                             <div class="col-md-3">
-                                 
+
                             </div>
-                         </div>
-                       
-                        
-                            
+                        </div>
+
+
+
                     </div>
 
                     <div class="form-group">
@@ -149,15 +151,14 @@
                                 <label for="latitude" class="text-dark"> <strong>LATITUDE  :</strong> </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" name="latitude" value="<%= locations.latitude %>"
-                                placeholder="example@gmail.com">
+                                <input type="text" name="latitude" value="<%= locations.latitude %>" placeholder="example@gmail.com">
                             </div>
                             <div class="col-md-3">
-                                
+
                             </div>
                         </div>
-                       
-                       
+
+
                     </div>
                     <div class="form-group">
                         <div class="row">
@@ -168,15 +169,14 @@
                                 <label for="longitude" class="text-dark"><strong>LONGITUDE  :</strong> </label>
                             </div>
                             <div class="col-md-3">
-                                <input type="text" name="longitude" value="<%= locations.longitude %>"
-                            placeholder="example@gmail.com">
+                                <input type="text" name="longitude" value="<%= locations.longitude %>" placeholder="example@gmail.com">
                             </div>
                             <div class="col-md-3">
-                                
+
                             </div>
                         </div>
-                       
-                        
+
+
                     </div>
 
 
@@ -191,7 +191,7 @@
                                 <button type="submit" class="btn text-dark update">Save</button>
                             </div>
                         </div>
-                        
+
                     </div>
 
                 </div>
