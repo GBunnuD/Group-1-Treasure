@@ -54,7 +54,9 @@ exports.findall = (req, res) => {
     Model.find()
         .then(location => {
             res.send(location);
+
         });
+
 }
 
 
