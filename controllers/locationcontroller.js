@@ -62,29 +62,37 @@ exports.findall = (req, res) => {
 
 exports.edit = (req, res) => {
 
-    console.log(req.body, "=====> UPDATE DATA")
+        console.log(req.body, "=====> UPDATE DATA")
 
-    if (!req.body) {
-        return res
-            .status(400)
-            .send({ message: "Data to update can not be empty" })
+        if (!req.body) {
+            return res
+                .status(400)
+                .send({ message: "Data to update can not be empty" })
+        }
+
+        const id = req.params.id;
+
+        Model.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+            .then(data => {
+                if (!data) {
+                    res.status(404).send({ message: `Cannot Update user with ${id}. Maybe user not found!` })
+                } else {
+                    // res.send(data)
+                    res.redirect('/location/display')
+
+                }
+            })
+            .catch(err => {
+                res.status(500).send({ message: "Error Update user information" })
+            })
     }
-
-    const id = req.params.id;
-
-    Model.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
-        .then(data => {
-            if (!data) {
-                res.status(404).send({ message: `Cannot Update user with ${id}. Maybe user not found!` })
-            } else {
-                // res.send(data)
-                res.redirect('/location/display')
-
-            }
-        })
-        .catch(err => {
-            res.status(500).send({ message: "Error Update user information" })
-        })
+    // exports.random = (req, rest) => {
+    //     console.log(req.body, "======> inside")
+    //     Model.find()
+    //         .then(location => {
+    //             res.send(location);
 
 
-}
+//         });
+
+// }
