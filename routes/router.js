@@ -19,7 +19,7 @@ router.get('/aboutme', (req, res, next) => {
     res.render('../views/aboutme', { title: 'aboutme' })
 })
 
-router.get('/', locationController.getHomePage )
+router.get('/', locationController.getHomePage)
 router.get('/location/display', services.displays);
 router.get('/location/create', services.addlocation);
 router.get('/location/editview/:locationId', services.editLocation);

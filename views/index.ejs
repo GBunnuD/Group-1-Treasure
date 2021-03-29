@@ -1,67 +1,67 @@
 <!-- include header -->
 <%- include('_header') %>
-<!-- /include header -->
+    <!-- /include header -->
 
-<body>
-    <main>
+    <body>
+        <main>
 
-        <br>
-        <br>
-        <br>
-        <div class="container ">
             <br>
             <br>
             <br>
-            <div class="row " id="layout ">
-                <div id="bgrone" class="col-md-6" >
-                   <br>
-                   <br>
-                   <br>
-                   <br>
+            <div class="container ">
+                <br>
+                <br>
+                <br>
+                <div class="row " id="layout ">
+                    <div id="bgrone" class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
 
-<<<<<<< HEAD
-                        <div id="button1">
+
+                        <!-- <div id="button1">
                             <span id="lbl" met></span>
-                        </div>
-=======
-                    <div id="button1">
-                        <span id="lbl"> <%= value.name %>
+                        </div> -->
+
+                        <div id="button1">
+                            <span id="lbl"> <%= value.name %>
                         </span>
->>>>>>> 53730eace42132b14158c6a6bec720a82e3884ea
+
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="col-md-2 ">
+                    <!-- <div class="col-md-2 ">
                 </div> -->
-                <div id="bgrtwo" class="col-md-6">
-                    <div id="button2 ">
-                        <!--<span id="lbl2 "></span>-->
-                        <div id="location ">Welcome to <span id="locationAnswer ">the Treasure App</span></div>
-                        <br />
-                        <div id="error-message ">Error</div>
-                        <br />
-                        <div id="device-lat ">Device Latitude</div>
-                        <br />
-                        <div id="device-long ">Device Longitude</div>
-                        <br />
+                    <div id="bgrtwo" class="col-md-6">
+                        <div id="button2 ">
+                            <!--<span id="lbl2 "></span>-->
+                            <div id="location ">Welcome to <span id="locationAnswer ">the Treasure App</span></div>
+                            <br />
+                            <div id="error-message ">Error</div>
+                            <br />
+                            <div id="device-lat ">Device Latitude</div>
+                            <br />
+                            <div id="device-long ">Device Longitude</div>
+                            <br />
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <br>
-        <div class="form-group" style="padding-left: 45%;">
-            <form action="https://group-1-treasure.herokuapp.com/location/create">
-                <input type="submit" value="Add Locations" />
-            </form>
-        </div>
-        <div class="form-group" style="padding-left: 44.5%;">
-            <form action="https://group-1-treasure.herokuapp.com/location/display">
-                <input type="submit" value="Display Locations" />
-            </form>
-        </div>
-    </main>
-    <script type="module " src="./scripts/main.js "></script>
-</body>
-<br>
-<!-- Footer -->
-<%- include('_footer') %>
+            <br>
+            <br>
+            <div class="form-group" style="padding-left: 45%;">
+                <form action="https://group-1-treasure.herokuapp.com/location/create">
+                    <input type="submit" value="Add Locations" />
+                </form>
+            </div>
+            <div class="form-group" style="padding-left: 44.5%;">
+                <form action="https://group-1-treasure.herokuapp.com/location/display">
+                    <input type="submit" value="Display Locations" />
+                </form>
+            </div>
+        </main>
+        <script type="module " src="./scripts/main.js "></script>
+    </body>
+    <br>
+    <!-- Footer -->
+    <%- include('_footer') %>
