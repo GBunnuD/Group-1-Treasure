@@ -87,3 +87,29 @@ exports.edit = (req, res) => {
             res.status(500).send({ message: "Error Update user information" })
         })
 }
+exports.random = (req, res) => {
+    Model.find()
+        .then(location => {
+            console.log("===========>start")
+                // res.send(location);
+            const random = Math.floor(Math.random() * location.length);
+            let value = location[random];
+            res.send(value);
+            console.log(value);
+            // location.forEach(function(value) {
+            //     if (value.name == target) {
+            //         qlat = value.Latitude;
+            //         qlong = value.Longitude;
+
+            //     } else {
+            //         console.log("invalid");
+            //     }
+            // }
+            // );
+
+            // console.log(qlat);
+            // console.log(target);
+
+        });
+
+}

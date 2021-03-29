@@ -28,6 +28,7 @@ router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 router.post('/location/edit/:id', locationController.edit);
 router.post('/location/delete/:id', locationController.delete)
+router.get('/locations/random', locationController.random);
 
 
 module.exports = router;
