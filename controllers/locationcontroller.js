@@ -91,11 +91,14 @@ exports.random = (req, res) => {
     Model.find()
         .then(location => {
             console.log("===========>start")
-                // res.send(location);
+            // res.send(location);
             const random = Math.floor(Math.random() * location.length);
             let value = location[random];
-            res.send(value);
+
+            // res.send(value);
             console.log(value);
+            // res.render('/index', { value :"Hello" })
+
             // location.forEach(function(value) {
             //     if (value.name == target) {
             //         qlat = value.Latitude;
@@ -111,5 +114,26 @@ exports.random = (req, res) => {
             // console.log(target);
 
         });
+
+}
+
+
+exports.getHomePage = (req, res) => {
+
+    console.log("======> homepage")
+
+
+    Model.find()
+        .then(location => {
+            // res.send(location);
+            const random = Math.floor(Math.random() * location.length);
+            let value = location[random];
+
+            // res.send(value);
+            console.log(value)
+            res.render('index', {value})
+
+        });
+
 
 }
