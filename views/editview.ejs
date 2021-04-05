@@ -45,7 +45,7 @@
                                     <label for="latitude" class="text-dark"> <strong>LATITUDE  :</strong> </label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="text" name="latitude" value="<%= locations.latitude %>" autocomplete="off" required>
+                                    <input type="number" step="any" name="latitude" min="-90.00" max="90.00" value="<%= locations.latitude %>" autocomplete="off" required>
                                 </div>
                                 <div class="col-md-3">
 
