@@ -13,7 +13,7 @@
                 <br>
                 <br>
                 <div class="row " id="layout ">
-                    <div id="bgrone" class="col-md-6">
+                    <div id="bgrone" class="col-md-6" onclick="/locations/random">
                         <br>
                         <br>
                         <br>
@@ -24,13 +24,16 @@
                             <span id="lbl" met></span>
                         </div> -->
 
-                        <div id="button1">
-                            <a id="lbl" href="/random"> Click here to get location
+                        <div id="button1" onclick="http://localhost:3001/locations/random">
+
+                            <a id="lbl" href="http://localhost:3001/random">
+                                <span>   <%= value.name %></span>
                             </a>
 
                         </div>
                     </div>
-
+                    <!-- <div class="col-md-2 ">
+                </div> -->
                     <div id="bgrtwo" class="col-md-6">
                         <div id="button2 ">
                             <!--<span id="lbl2 "></span>-->

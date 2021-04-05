@@ -115,7 +115,8 @@ exports.getHomePage = (req, res) => {
 
             // res.send(value);
             console.log(value)
-            res.render('index', { value })
+            res.render('random', { value })
+
 
         });
 
