@@ -63,7 +63,7 @@
                                     <label for="longitude" class="text-dark"><strong>LONGITUDE  :</strong> </label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="text" name="longitude" value="<%= locations.longitude %>" autocomplete="off" required>
+                                    <input type="number" step="any" min="-180.00" max="180.00" name="longitude" value="<%= locations.longitude %>" autocomplete="off" required>
                                 </div>
                                 <div class="col-md-3">
 
