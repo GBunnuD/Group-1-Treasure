@@ -1,5 +1,5 @@
 // let device, location;
-let colorElement = document.getElementById("status1");
+let colorElement = document.getElementById("bgrtwo");
 let colorElement1 = document.getElementById("status");
 let incrementer = 0;
 
@@ -10,8 +10,8 @@ function main() {
 window.addEventListener('load', main);
 colorElement.addEventListener('click', onClickSquareBox2);
 colorElement.addEventListener('touch', onClickSquareBox2);
-colorElement1.addEventListener('click', onClickSquareBox1);
-colorElement1.addEventListener('touch', onClickSquareBox1);
+colorElement.addEventListener('click', onClickSquareBox1);
+colorElement.addEventListener('touch', onClickSquareBox1);
 
 
 
