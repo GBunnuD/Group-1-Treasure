@@ -14,6 +14,9 @@ router.get('/', (req, res, next) => {
 router.get('/GD', (req, res, next) => {
     res.render('../views/GD', { title: 'GD' })
 })
+router.get('/lat', (req, res, next) => {
+    res.render('../views/lat', { title: 'lat' })
+})
 
 router.get('/aboutme', (req, res, next) => {
     res.render('../views/aboutme', { title: 'aboutme' })
@@ -23,7 +26,6 @@ router.get('/random', locationController.getHomePage)
 router.get('/location/display', services.displays);
 router.get('/location/create', services.addlocation);
 router.get('/location/editview/:locationId', services.editLocation);
-
 router.post('/locations', locationController.create);
 router.get('/location', locationController.findall);
 router.post('/location/edit/:id', locationController.edit);
