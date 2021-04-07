@@ -78,7 +78,7 @@
                         <br>
                         <div id="location ">Welcome to <span id="locationAnswer ">the Treasure App</span></div>
                         <br />
-                        <button id="status1">Error</button>
+                        <button id="status1">CurrentLocation</button>
                         <br>
                         <!-- <div id="error-message ">Error</div> -->
                         <br />
@@ -95,15 +95,24 @@
             </div>
             <br>
 
-            <div class="form-group" style="padding-left: 45%;">
-                <form action="https://group-1-treasure.herokuapp.com/location/create">
-                    <input type="submit" value="Add Locations" />
-                </form>
-            </div>
-            <div class="form-group" style="padding-left: 44.5%;">
-                <form action="https://group-1-treasure.herokuapp.com/location/display">
-                    <input type="submit" value="Display Locations" />
-                </form>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3" style="text-align: center;">
+                   <div class="form-group" style="padding-left: 45%;">
+                       <form action="https://group-1-treasure.herokuapp.com/location/create">
+                           <input type="submit" value="Add Locations" />
+                       </form>
+                   </div>
+                </div>
+   
+                <div class="col-md-3" style="text-align: left;">
+                   <div class="form-group" style="padding-left: 44.5%;">
+                       <form action="https://group-1-treasure.herokuapp.com/location/display">
+                           <input type="submit" value="Display Locations" />
+                       </form>
+                   </div>
+               </div>
+               <div class="col-md-4"></div>
             </div>
     </main>
 
