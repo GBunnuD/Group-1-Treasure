@@ -1,36 +1,56 @@
 // let device, location;
 let colorElement = document.getElementById("bgrtwo");
-let colorElement1 = document.getElementById("status");
-let incrementer = 0;
+let colorElement1 = document.getElementById("bgrone")
+var questLocationName = document.getElementById("lname").getAttribute("value");
+var questLocationLat = document.getElementById("llat").getAttribute("value");
+var questLocationLong = document.getElementById("llong").getAttribute("value");
+let incrementer = 1;
 
 function main() {
     console.log('Page is fully loaded');
+    console.log(questLocationLat);
+    if (incrementer == 1) {
+        document.getElementById("ready").innerHTML = "Click to start playing";
+        document.getElementById("ready1").innerHTML = " ";
+        let utterance = new SpeechSynthesisUtterance("Click to start playing");
+        speechSynthesis.speak(utterance);
+        document.getElementById("lname").innerHTML = "        ";
+    }
+    incrementer = 0;
+
+
+
 }
 
 window.addEventListener('load', main);
 colorElement.addEventListener('click', onClickSquareBox2);
 colorElement.addEventListener('touch', onClickSquareBox2);
-colorElement.addEventListener('click', onClickSquareBox1);
-colorElement.addEventListener('touch', onClickSquareBox1);
+colorElement1.addEventListener('click', onClickSquareBox1);
+colorElement1.addEventListener('touch', onClickSquareBox1);
 
+colorElement1.addEventListener('click', display);
+colorElement1.addEventListener('touch', display);
 
 
 async function onClickSquareBox1() {
-
-    const details = await fetch("/findall")
-    console.log(details);
-
-    if (incrementer == locationsArray.length) {
-        incrementer = 0;
+    incrementer
+    if (incrementer == 1) {
+        window.location.reload()
+        incrementer++;
     }
+    incrementer = 0;
 
-    // TESTING CHANGES
-    console.log("GET STORAGE LOCATIONS", localStorage.getItem("locations"));
-    document.getElementById("targetloc").innerHTML = "The treasure location is ready..! ";
-    document.getElementById("lbl").innerHTML = " Start playing the game.";
+}
+
+
+function display() {
+    document.getElementById("ready").innerHTML = "The treasure location is ready..! ";
+    document.getElementById("ready1").innerHTML = " Start playing the game.";
     let utterance = new SpeechSynthesisUtterance(`The treasure location is ready start playing the game.`);
     speechSynthesis.speak(utterance);
-    incrementer++;
+    console.log(incrementer)
+    document.getElementById("lname").innerHTML = questLocationName;
+    incrementer = 1;
 
 }
 
@@ -45,61 +65,76 @@ async function getLocation() {
 }
 
 let currentlat, currentlon, loc, error = true;
-let targetLoc = locationsArray[Math.floor(Math.random() * locationsArray.length)];
+// let targetLoc = locationsArray[Math.floor(Math.random() * locationsArray.length)];
 
 async function onClickSquareBox2() {
-    const locText = await getLocation();
-    // loc = 'Your current Location';
-    // document.getElementById("location").innerHTML = loc;
-    currentlat = locText.coords.latitude;
-    console.log(currentlat)
-    document.getElementById("device-lat").innerHTML = currentlat.toFixed(9);
-    currentlon = locText.coords.longitude;
-    console.log(currentlon)
-    document.getElementById("device-long").innerHTML = currentlon.toFixed(9);
+    if (incrementer == 1) {
+        const locText = await getLocation();
+        // loc = 'Your current Location';
+        // document.getElementById("location").innerHTML = loc;
+        currentlat = locText.coords.latitude;
+        console.log("============>clat", currentlat)
+        document.getElementById("device-lat").innerHTML = currentlat.toFixed(9);
+        currentlon = locText.coords.longitude;
+        console.log(currentlon)
+        document.getElementById("device-long").innerHTML = currentlon.toFixed(9);
+        console.log("===============before is inside");
+        console.log(questLocationLat);
 
-    // locationsArray.forEach(function(value) {
-    //     if (isInside(value.Latitude, value.Longitude)) {
-    //         document.getElementById("location").innerHTML = value.Name;
-    //         let utterance = new SpeechSynthesisUtterance("Congratulations!, You found location ${value.Name}");
-    //         speechSynthesis.speak(utterance);
-    //         error = false;
-    //     }
-    // });
 
-    if (error) {
-        console.log("error is here")
-        document.getElementById("error-message").innerHTML = "Sorry,You're not near to the treasure";
-        let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure");
-        speechSynthesis.speak(utterance);
+
+        if (isInside() == true) {
+            console.log("==========> inside inside")
+            document.getElementById("target").innerHTML = questLocationName;
+
+            let utterance = new SpeechSynthesisUtterance("Congratulations!, You found location ${questLocationName}");
+            speechSynthesis.speak(utterance);
+            console.log(questLocationLat);
+            error = false;
+        };
+
+        if (error) {
+            console.log("error is here")
+            document.getElementById("error").innerHTML = "Sorry,You're not near to the treasure";
+            let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure");
+            speechSynthesis.speak(utterance);
+        } else {
+            document.getElementById("target1").innerHTML = "";
+        }
+        console.log(incrementer, "===================>")
+
     } else {
-        document.getElementById("error-message").innerHTML = "";
+        document.getElementById("target").innerHTML = "First click on Box 2";
     }
 
 }
 
-// function isInside(questLat, questLon) {
-//     let distance = distanceBetweenLocations(questLat, questLon);
-//     console.log("distance: " + distance);
-//     if (distance < 30) {
-//         return true;
-//     } else {
-//         return false;
-//     }
-// }
+function isInside(questLocationLat, questLocationLong) {
+    var questLocationLat = document.getElementById("llat").getAttribute("value");
+    var questLocationLong = document.getElementById("llong").getAttribute("value");
+    console.log(questLocationLat);
+    let distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong);
+    console.log("distance: " + distance);
+    console.log("quest lat " + questLocationLat);
 
-// function distanceBetweenLocations(questLat, questLon) {
-//     const R = 6371e3;
-//     const φ1 = currentlat * Math.PI / 180;
-//     const φ2 = questLat * Math.PI / 180;
-//     const Δφ = (questLat - currentlat) * Math.PI / 180;
-//     const Δλ = (questLon - currentlon) * Math.PI / 180;
 
-//     const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
-//         Math.cos(φ1) * Math.cos(φ2) *
-//         Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
-//     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    if (distance < 30) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-//     const d = R * c;
-//     return d;
-// }
+function distanceBetweenLocations(currentlat, currentlon, questLocatiionLat, questLocationLong) {
+    var p = 0.017453292519943295;
+    console.log(currentlat, currentlon, questLocatiionLat, questLocationLong)
+    var a = 0.5 - Math.cos((questLocatiionLat - currentlat) * p) / 2 +
+        Math.cos(currentlat * p) * Math.cos(questLocatiionLat * p) *
+        (1 - Math.cos((questLocationLong - currentlon) * p)) / 2;
+    console.log("================>");
+    var result = 12742 * Math.asin(Math.sqrt(a));
+    console.log(result)
+
+    return result;
+
+}

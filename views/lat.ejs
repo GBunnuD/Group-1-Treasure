@@ -1,144 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>The Hunt</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../favicon_io/apple-touch-icon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="styles/main.css" type="text/css" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <link rel="icon" href="./favicon_io (1)/android-chrome-192x192.png" type="image/icon type"> -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q7PG8J2WKZ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-Q7PG8J2WKZ');
-    </script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-    <nav class=" text-center py-3" id="nav">
-        <a class=" navbar-brand " id="navIn " href="https://group-1-treasure.herokuapp.com/" style="color: #ffffff; font-weight: bolder; ">
-                The Hunt: Group 1
-          
-            </a>
-    </nav>
-</head>
+<%- include('_header') %>
 
 
 
-<body class="page-container">
+    <body class="page-container">
 
 
 
 
-    </div>
-    </nav>
-    <main>
+        </div>
+        </nav>
+        <main>
 
 
-        <br>
-        <div class="container ">
             <br>
-            <br>
-            <br>
-            <div class="row " id="layout ">
-                <div id="bgrone" class="col-md-6">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <!-- <div id="button1">
+            <div class="container ">
+                <br>
+                <br>
+                <br>
+                <div class="row " id="layout ">
+                    <div id="bgrone" class="col-md-6">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <!-- <div id="button1">
                             <span id="lbl" met></span>
                         </div> -->
-                    <div id="button1" style="font-weight: bold;">Quest Location Name: <br>
-                        <a id="lbl" href="https://group-1-treasure.herokuapp.com/random">
-                            <span> <%= value.name %></span>
+                        <div id="ready"></div>
+                        <div id="ready1"></div>
+                        <div id="button1" style="font-weight: bold;">
+                            <!-- The treasure location is ready..! <br> Start playing the game. -->
+                            <br> Quest Location Name: <br>
+                            <a id="lbl" href="https://group-1-treasure.herokuapp.com/random">
+                            <span id="lname" value="<%= value.name %>"> <%= value.name %></span>
+                            <span id="llat" value="<%= value.latitude %>" style="visibility: hidden;"></span>
+                            <span id="llong" value="<%= value.longitude %>" style="visibility: hidden;"></span>
+
                         </a>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="col-md-2 ">
+                    <!-- <div class="col-md-2 ">
                 </div> -->
-                <!-- <div id="status"> -->
-                <div id="bgrtwo" class="col-md-6">
-                    <div id="button2 ">
+                    <!-- <div id="status"> -->
+                    <div id="bgrtwo" class="col-md-6">
+                        <div id="button2 ">
 
-                        <!--<span id="lbl2 "></span>-->
-                        <br>
-                        <br>
-                        <div id="location ">Welcome to <span id="locationAnswer">the Treasure App</span></div>
-                        <br />
-                        <div id="status1">CurrentLocation</div>
-                        <br>
-
-                        <br />
-
-                        <div id="location">
-                            Device Latitude:
+                            <!--<span id="lbl2 "></span>-->
                             <br>
-                            <div id="device-lat"> </div>
-                            <br> Device Longitude:
-                            <div id="device-long"></div>
+                            <br>
+                            <div id="location ">Welcome to <span id="target">?</span></div>
+                            <div id="error"></div>
+                            <br>
+                            <div id="status1">CurrentLocation</div>
 
-                            <br />
+
+
+
+                            <div id="location">
+                                Device Latitude:
+                                <br>
+                                <div id="device-lat"> </div>
+                                <br> Device Longitude:
+                                <div id="device-long"></div>
+                                <div id="target"></div>
+                                <div id="target1"></div>
+
+                                <br />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            <br>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3" style="text-align: center;">
+                    <div class="form-group" style="padding-left: 45%;">
+                        <form action="https://group-1-treasure.herokuapp.com/location/create">
+                            <input type="submit" value="Add Locations" />
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-3" style="text-align: left;">
+                    <div class="form-group" style="padding-left: 44.5%;">
+                        <form action="https://group-1-treasure.herokuapp.com/location/display">
+                            <input type="submit" value="Display Locations" />
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </main>
+
+        <br>
         <br>
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-3" style="text-align: center;">
-                <div class="form-group" style="padding-left: 45%;">
-                    <form action="https://group-1-treasure.herokuapp.com/location/create">
-                        <input type="submit" value="Add Locations" />
-                    </form>
-                </div>
-            </div>
 
-            <div class="col-md-3" style="text-align: left;">
-                <div class="form-group" style="padding-left: 44.5%;">
-                    <form action="https://group-1-treasure.herokuapp.com/location/display">
-                        <input type="submit" value="Display Locations" />
-                    </form>
-                </div>
-            </div>
-            <div class="col-md-4"></div>
-        </div>
-    </main>
-
-    <br>
-    <br>
-
-
-    <footer class="page-footer " id="foot">
-
-        <!-- Copyright -->
-        <div class=" text-center py-3 ">© 2021 Copyright:
-
-            <a href="https://github.com/GD-Prasad/Group-1-Treasure">
-                <i class="fab fa-github "></i> GitHub</a>
-        </div>
-
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js" integrity="sha512-j8XccWZ0cdadrXNufXQDmic9TmvsvUhI/LAeOzu5UnWwsMCsv0VMq3I2qj+HYeFX+3Fv+Z9c+PFYNacSOPlMBw==" crossorigin="anonymous"></script>
-    <script type="module" src="/scripts/main.js"></script>
-</body>
+        <script type="module" src="/scripts/main.js"></script>
+    </body>
+    <%- include('_footer') %>
 
 
 </html>
