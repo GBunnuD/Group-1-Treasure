@@ -1,102 +1,100 @@
 <!-- include header -->
 <%- include('_header') %>
-<!-- /include header -->
+    <!-- /include header -->
 
-<body>
-    <main id="site-main">
-        <br><br><br><br>
-        <div class="container">
+    <body>
+        <main id="site-main">
+            <br><br><br><br>
+            <div class="container">
 
-            <div class="form-title text-center">
-                <h2 class="text-dark"> <strong> Update Location</strong> </h2>
-
-            </div>
-
-
-            <form action="/location/edit/<%= locations._id %>" method="POST" id="update-location">
-                <div class="new_user">
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-
-                            </div>
-                            <div class="col-md-3" style="text-align: center;">
-                                <label for="name" class="text"><strong>Name :</strong> </label>
-                                <label type="text" name="id" value="<%= locations._id %>"></label>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="text" name="name" value="<%= locations.name %>" placeholder="Mark Stoenis">
-                            </div>
-                            <div class="col-md-3">
-
-                            </div>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-
-                            </div>
-                            <div class="col-md-3" style="text-align: center;">
-                                <label for="latitude" class="text-dark"> <strong>LATITUDE :</strong> </label>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="number" step="any" name="latitude" min="-90.00" max="90.00"
-                                    value="<%= locations.latitude %>" autocomplete="off" required>
-                            </div>
-                            <div class="col-md-3">
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-
-                            </div>
-                            <div class="col-md-3" style="text-align: center;">
-                                <label for="longitude" class="text-dark"><strong>LONGITUDE :</strong> </label>
-                            </div>
-                            <div class="col-md-3">
-                                <input type="number" step="any" min="-180.00" max="180.00" name="longitude"
-                                    value="<%= locations.longitude %>" autocomplete="off" required>
-                            </div>
-                            <div class="col-md-3">
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-3">
-
-                            </div>
-                            <div class="col-md-6 " style="text-align: center;">
-                                <button type="submit" class="btn text-dark update">Save</button>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="form-title text-center">
+                    <h2 class="text-dark"> <strong> Update Location</strong> </h2>
 
                 </div>
-            </form>
 
-        </div>
-    </main>
 
-</body>
-<br>
-<!-- Footer -->
-<%- include('_footer') %>
+                <form action="/location/edit/<%= locations._id %>" method="POST" id="update-location">
+                    <div class="new_user">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3" style="text-align: center;">
+                                    <label for="name" class="text"><strong>Name :</strong> </label>
+                                    <label type="text" name="id" value="<%= locations._id %>"></label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" name="name" pattern="[A-Za-z0-9]+" value="<%= locations.name %>" placeholder="Mark Stoenis">
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3" style="text-align: center;">
+                                    <label for="latitude" class="text-dark"> <strong>LATITUDE :</strong> </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="number" step="any" name="latitude" min="-90.00" max="90.00" value="<%= locations.latitude %>" autocomplete="off" required>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-3" style="text-align: center;">
+                                    <label for="longitude" class="text-dark"><strong>LONGITUDE :</strong> </label>
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="number" step="any" min="-180.00" max="180.00" name="longitude" value="<%= locations.longitude %>" autocomplete="off" required>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-3">
+
+                                </div>
+                                <div class="col-md-6 " style="text-align: center;">
+                                    <button type="submit" class="btn text-dark update">Save</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </main>
+
+    </body>
+    <br>
+    <!-- Footer -->
+    <%- include('_footer') %>
