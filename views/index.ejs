@@ -1,51 +1,81 @@
-<!-- include header -->
-<%- include('_header') %>
-    <!-- /include header -->
+<!DOCTYPE html>
+<html lang="en">
 
-    <body>
+<%- include('_header') %>
+
+
+
+    <body class="page-container">
+
+
+
+
+        </div>
+        </nav>
         <main>
 
+
             <br>
-            <br>
-            <br>
-            <div class="container">
+            <div class="container ">
                 <br>
-
+                <br>
+                <br>
                 <div class="row " id="layout ">
-                    <div id="bgrone" href="/random" class="col-md-6">
+                    <div id="bgrone" class="col-md-6">
                         <br>
                         <br>
                         <br>
                         <br>
-
-
                         <!-- <div id="button1">
                             <span id="lbl" met></span>
                         </div> -->
+                        <div id="ready"></div>
+                        <div id="ready1"></div>
+                        <div id="button1" style="font-weight: bold;">
+                            <!-- The treasure location is ready..! <br> Start playing the game. -->
+                            <br> Quest Location Name: <br>
+                            <a id="lbl" href="https://group-1-treasure.herokuapp.com/random">
+                            <span id="lname" value="<%= value.name %>"> <%= value.name %></span>
+                            <span id="llat" value="<%= value.latitude %>" style="visibility: hidden;"></span>
+                            <span id="llong" value="<%= value.longitude %>" style="visibility: hidden;"></span>
 
-                        <div id="button1">
-                            <a id="lbl" href="/random"> Click here to get location
-                            </a>
-
+                        </a>
                         </div>
                     </div>
-
+                    <!-- <div class="col-md-2 ">
+                </div> -->
+                    <!-- <div id="status"> -->
                     <div id="bgrtwo" class="col-md-6">
                         <div id="button2 ">
+
                             <!--<span id="lbl2 "></span>-->
-                            <div id="location ">Welcome to <span id="locationAnswer ">the Treasure App</span></div>
-                            <br />
-                            <div id="error-message ">CurrentLocation</div>
-                            <br />
-                            <div id="device-lat ">Device Latitude</div>
-                            <br />
-                            <div id="device-long ">Device Longitude</div>
-                            <br />
+                            <br>
+                            <br>
+                            <div id="location ">Welcome to <span id="target">?</span></div>
+                            <div id="error"></div>
+                            <br>
+                            <div id="status1">CurrentLocation</div>
+
+
+
+
+                            <div id="location">
+                                Device Latitude:
+                                <br>
+                                <div id="device-lat"> </div>
+                                <br> Device Longitude:
+                                <div id="device-long"></div>
+                                <div id="target"></div>
+                                <div id="target1"></div>
+
+                                <br />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
+
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-3" style="text-align: center;">
@@ -65,13 +95,15 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-
-
         </main>
+
         <br>
         <br>
-        <script type="module " src="./scripts/main.js "></script>
+
+
+        <script type="module" src="/scripts/main.js"></script>
     </body>
-    <br>
-    <!-- Footer -->
     <%- include('_footer') %>
+
+
+</html>

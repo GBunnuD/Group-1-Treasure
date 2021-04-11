@@ -115,7 +115,7 @@ exports.getHomePage = (req, res) => {
 
             // res.send(value);
             console.log(value)
-            res.render('lat', { value })
+            res.render('index', { value })
 
 
         });
