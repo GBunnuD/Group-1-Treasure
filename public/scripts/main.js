@@ -1,4 +1,3 @@
-// let device, location;
 let colorElement = document.getElementById("bgrtwo");
 let colorElement1 = document.getElementById("bgrone")
 var questLocationName = document.getElementById("lname").getAttribute("value");
@@ -65,13 +64,12 @@ async function getLocation() {
 }
 
 let currentlat, currentlon, loc, error = true;
-// let targetLoc = locationsArray[Math.floor(Math.random() * locationsArray.length)];
+
 
 async function onClickSquareBox2() {
     if (incrementer == 1) {
         const locText = await getLocation();
-        // loc = 'Your current Location';
-        // document.getElementById("location").innerHTML = loc;
+
         currentlat = locText.coords.latitude;
         console.log("============>clat", currentlat)
         document.getElementById("device-lat").innerHTML = currentlat.toFixed(9);
@@ -86,8 +84,7 @@ async function onClickSquareBox2() {
         if (isInside() == true) {
             console.log("==========> inside inside")
             document.getElementById("target").innerHTML = questLocationName;
-
-            let utterance = new SpeechSynthesisUtterance("Congratulations!, You found location ${questLocationName}");
+            let utterance = new SpeechSynthesisUtterance(`Congratulations!, You found location ${questLocationName}`);
             speechSynthesis.speak(utterance);
             console.log(questLocationLat);
             error = false;
