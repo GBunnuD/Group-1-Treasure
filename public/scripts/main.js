@@ -94,7 +94,7 @@ async function onClickSquareBox2() {
         if (error) {
             // console.log("error is here")
             document.getElementById("error").innerHTML = "Sorry,You're not near to the treasure";
-            document.getElementById("distance").innerHTML = "Disyance to the location:  " + distance;
+            document.getElementById("distance").innerHTML = "Disyance to the location:  " + distance + " meters.";
 
             let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure");
             speechSynthesis.speak(utterance);
