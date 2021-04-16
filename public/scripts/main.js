@@ -4,6 +4,7 @@ var questLocationName = document.getElementById("lname").getAttribute("value");
 var questLocationLat = document.getElementById("llat").getAttribute("value");
 var questLocationLong = document.getElementById("llong").getAttribute("value");
 let incrementer = 1;
+let distance = 0;
 
 function main() {
     console.log('Page is fully loaded');
@@ -93,6 +94,8 @@ async function onClickSquareBox2() {
         if (error) {
             // console.log("error is here")
             document.getElementById("error").innerHTML = "Sorry,You're not near to the treasure";
+            document.getElementById("distance").innerHTML = "Disyance to the location:  " + distance;
+
             let utterance = new SpeechSynthesisUtterance("Sorry,You're not near to the treasure");
             speechSynthesis.speak(utterance);
         } else {
@@ -110,7 +113,7 @@ function isInside(questLocationLat, questLocationLong) {
     var questLocationLat = document.getElementById("llat").getAttribute("value");
     var questLocationLong = document.getElementById("llong").getAttribute("value");
     // console.log(questLocationLat);
-    let distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong);
+    distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong);
     // console.log("distance: " + distance);
     // console.log("quest lat " + questLocationLat);
 
