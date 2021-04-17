@@ -4,59 +4,39 @@
 
 
     <body>
-        <br><br><br><br>
-        <table class="table table-inverse">
-            <thead>
-                <tr>
-                    <!-- <th>LocationID</th> -->
-                    <th>Name</th>
-                    <th>longitude</th>
-                    <th>Latitude</th>
-                    <th>hint</th>
-                    <th>edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
+        <br><br><br>
+        <div class="card text-center">
+            <% for(var i=0; i < locations.length; i++) { %>
+                <div class="card-body" style="font-weight: bold; font-size: large;">Name:
+                    <%= locations[i].name %>
+                </div>
+                <div class="card-header">
 
-            <tbody>
-                <% for(var i=0; i < locations.length; i++) { %>
-                    <tr>
-                        <!-- <td>
-                            <%= locations[i]._id %>
-                        </td> -->
-                        <td>
-                            <%= locations[i].name %>
-                        </td>
-                        <td>
-                            <%= locations[i].longitude %>
-                        </td>
-                        <td>
-                            <%= locations[i].latitude %>
-                        </td>
-                        <td>
-                            <%= locations[i].hint %>
-                        </td>
-                        <td>
-                            <a href="/location/editview/<%= locations[i]._id%>" class="btn border-shadow update">
-                                <span class="text-gradient"><i>edit</i></span>
+                    <p class="card-text">
+                        Longitude:
+                        <%= locations[i].longitude %>
+                    </p>
+                    <p class="card-text">
+                        Latitude:
+                        <%= locations[i].latitude %>
+                    </p>
+                    <h5 class="card-title">Hint:
+                        <%= locations[i].hint %>
+                    </h5>
+                    <a href="/location/editview/<%= locations[i]._id%>" class="btn btn-outline-green">Edit  <i class="fas fa-edit"></i></a>
+                    <form action="/location/delete/<%= locations[i]._id %>" method="POST">
+                        <div class="form-group ">
+                            <button type="submit " class="btn btn-green btn-rounded">Delete  <i class="fas fa-trash"></i></button>
+                        </div>
+                    </form>
+                </div>
 
-                        </td>
-                        <td>
-                            <form action="/location/delete/<%= locations[i]._id %>" method="POST">
-                                <div class="form-group ">
-                                    <button type="submit " class="btn text-dark update ">Delete</button>
-                                </div>
-                            </form>
-                        </td>
-                    </tr>
-                    <% } %>
-            </tbody>
-        </table>
-
-
+                <% } %>
+        </div>
 
     </body>
 
+    <br>
     <br>
     <!-- Footer -->
     <!-- Footer -->
