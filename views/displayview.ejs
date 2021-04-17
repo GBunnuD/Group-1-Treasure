@@ -8,10 +8,11 @@
         <table class="table table-inverse">
             <thead>
                 <tr>
-                    <th>LocationID</th>
+                    <!-- <th>LocationID</th> -->
                     <th>Name</th>
                     <th>longitude</th>
                     <th>Latitude</th>
+                    <th>hint</th>
                     <th>edit</th>
                     <th>Delete</th>
                 </tr>
@@ -20,9 +21,9 @@
             <tbody>
                 <% for(var i=0; i < locations.length; i++) { %>
                     <tr>
-                        <td>
+                        <!-- <td>
                             <%= locations[i]._id %>
-                        </td>
+                        </td> -->
                         <td>
                             <%= locations[i].name %>
                         </td>
@@ -31,6 +32,9 @@
                         </td>
                         <td>
                             <%= locations[i].latitude %>
+                        </td>
+                        <td>
+                            <%= locations[i].hint %>
                         </td>
                         <td>
                             <a href="/location/editview/<%= locations[i]._id%>" class="btn border-shadow update">

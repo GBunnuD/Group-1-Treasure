@@ -20,7 +20,7 @@
                 <br>
                 <br>
                 <br>
-                <div class="row " id="layout ">
+                <div class="row " id="layout " style="font-weight: bold;">
                     <div id="bgrone" class="col-6">
                         <br>
                         <br>
@@ -31,6 +31,8 @@
                         </div> -->
                         <div id="ready"></div>
                         <div id="ready1"></div>
+                        <br>
+                        <div id="hint"></div>
                         <div id="button1" style="font-weight: bold;">
                             <!-- The treasure location is ready..! <br> Start playing the game. -->
                             <!-- <br> Quest Location Name: <br> -->
@@ -38,6 +40,7 @@
                             <span id="lname" value="<%= value.name %>" style="visibility: hidden;"></span>
                             <span id="llat" value="<%= value.latitude %>" style="visibility: hidden;"></span>
                             <span id="llong" value="<%= value.longitude %>" style="visibility: hidden;"></span>
+                            <span id="lhint" value="<%= value.hint %>" style="visibility: hidden;"></span>
 
                         </a>
                         </div>
@@ -54,22 +57,22 @@
                             <div id="location ">Welcome to <span id="target">?</span></div>
                             <div id="error"></div>
                             <br>
-                            <div id="status1">CurrentLocation</div>
+                            <div id="status1"></div>
 
 
 
 
                             <div id="location">
-                                Device Latitude:
+
                                 <br>
                                 <div id="device-lat"> </div>
-                                <br> Device Longitude:
+                                <br>
                                 <div id="device-long"></div>
                                 <div id="target"></div>
                                 <div id="target1"></div>
                                 <div id="distance"></div>
 
-                                <br />
+
                             </div>
                         </div>
                     </div>
@@ -78,8 +81,8 @@
             <br>
 
             <div class="row">
-                <div class="col-2"></div>
-                <div class="col-3" style="text-align: center;">
+
+                <div class="col-md-5" style="text-align: center;">
                     <div class="form-group" style="padding-left: 45%;">
                         <form action="https://group-1-treasure.herokuapp.com/location/create">
                             <input type="submit" value="Add Locations" />
@@ -87,7 +90,7 @@
                     </div>
                 </div>
 
-                <div class="col-3" style="text-align: left;">
+                <div class="col-md-5" style="text-align: center;">
                     <div class="form-group" style="padding-left: 44.5%;">
                         <form action="https://group-1-treasure.herokuapp.com/location/display">
                             <input type="submit" value="Display Locations" />

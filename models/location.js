@@ -20,6 +20,11 @@ const LocationSchema = new mongoose.Schema({
     latitude: {
         type: Number,
         // required: true,   
+    },
+    hint: {
+        type: String,
+        minlength: 2,
+        maxlength: 200
     }
 
 

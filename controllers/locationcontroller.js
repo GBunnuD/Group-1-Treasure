@@ -15,6 +15,7 @@ exports.create = (req, res) => {
         name: req.body.name,
         latitude: req.body.latitude,
         longitude: req.body.longitude,
+        hint: req.body.hint,
     });
     location.save(err => {
         // res.send({ status: 200, response: "Location Table is created successfully" });
