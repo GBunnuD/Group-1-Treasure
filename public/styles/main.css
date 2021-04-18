@@ -39,7 +39,13 @@
 #lbl {
     text-align: center;
 }
+#head {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    text-align: center;
 
+  }
 #foot {
     background-color: #00674C;
     position: fixed;
@@ -62,7 +68,3 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
 }
-header {
-    position: sticky;
-    top: 0;
-  }
