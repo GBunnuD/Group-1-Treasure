@@ -9,7 +9,8 @@ let distance = 0;
 
 function main() {
     console.log('Page is fully loaded');
-    console.log(questLocationName);
+    // console.log(questLocationName);
+
     if (incrementer == 1) {
         document.getElementById("ready").innerHTML = "Click to start playing";
         document.getElementById("ready1").innerHTML = " ";
@@ -42,7 +43,7 @@ function display() {
     if (incrementer === 0) {
         document.getElementById("ready").innerHTML = "The treasure location is ready..! ";
         document.getElementById("ready1").innerHTML = " Start playing the game.";
-        console.log("============================", incrementer)
+        // console.log("============================", incrementer)
         let utterance = new SpeechSynthesisUtterance(`The treasure location is ready start playing the game.`);
         speechSynthesis.speak(utterance);
         document.getElementById("hint").innerHTML = ("Hint: " + questLocationHint);
@@ -86,6 +87,7 @@ async function onClickSquareBox2() {
             // console.log("==========> inside inside")
             document.getElementById("target").innerHTML = questLocationName;
             document.getElementById("distance").innerHTML = "  ";
+            document.getElementById("error").innerHTML = "Congratulations!!!!!!";
             let utterance = new SpeechSynthesisUtterance(`Congratulations!, You found location ${questLocationName}`);
             speechSynthesis.speak(utterance);
             // console.log(questLocationLat);
@@ -115,7 +117,7 @@ function isInside(questLocationLat, questLocationLong) {
     var questLocationLong = document.getElementById("llong").getAttribute("value");
     // console.log(questLocationLat);
     distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong);
-    console.log("distance: " + distance);
+    // console.log("distance: " + distance);
     // console.log("quest lat " + questLocationLat);
 
 
