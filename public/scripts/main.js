@@ -85,6 +85,7 @@ async function onClickSquareBox2() {
         if (isInside() == true) {
             // console.log("==========> inside inside")
             document.getElementById("target").innerHTML = questLocationName;
+            document.getElementById("distance").innerHTML = "  ";
             let utterance = new SpeechSynthesisUtterance(`Congratulations!, You found location ${questLocationName}`);
             speechSynthesis.speak(utterance);
             // console.log(questLocationLat);
@@ -113,12 +114,12 @@ function isInside(questLocationLat, questLocationLong) {
     var questLocationLat = document.getElementById("llat").getAttribute("value");
     var questLocationLong = document.getElementById("llong").getAttribute("value");
     // console.log(questLocationLat);
-    distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong) * 1609.34;
+    distance = distanceBetweenLocations(currentlat, currentlon, questLocationLat, questLocationLong);
     console.log("distance: " + distance);
     // console.log("quest lat " + questLocationLat);
 
 
-    if (distance < 30) {
+    if (distance < 0.05) {
         return true;
     } else {
         return false;
