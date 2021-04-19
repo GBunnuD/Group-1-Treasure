@@ -6,6 +6,7 @@
     position: fixed;
     left: 0;
     width: 100%;
+    top: 0;
     text-align: center;
 }
 
@@ -39,6 +40,14 @@
 #lbl {
     text-align: center;
 }
+
+#head {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+
+  }
 
 #foot {
     background-color: #00674C;
