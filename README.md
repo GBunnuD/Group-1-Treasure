@@ -14,7 +14,7 @@
 - JavaScript.
 - jQuery
 - Node with Express.
-- MySQL.
+- Mongodb.
 -
 # Heroku hosted link : 
 
@@ -22,11 +22,11 @@
   
  # create heroku hosted
  
- https://group-1-treasure.herokuapp.com/location/location/create
+ https://group-1-treasure.herokuapp.com/location/create?
  
 #  display data 
 
-https://group-1-treasure.herokuapp.com/location/location/display
+https://group-1-treasure.herokuapp.com/location/display?
  
  
  # Github source link 
